@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cs481Hw3"
+             x:Class="Cs481Hw3.Page2">
+<StackLayout>
+        <Label Text="What is your name?" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <Entry
+            x:Name="Entry1"
+            Placeholder="Enter Text"
+            Margin="15,0" />
+        <Button Clicked="Button_OnClicked" Text="Continue" ></Button>
+
+    </StackLayout>
+	
+    
+
+</ContentPage>
