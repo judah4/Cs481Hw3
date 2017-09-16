@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cs481Hw3"
+             x:Class="Cs481Hw3.Page1">
+<StackLayout>
+        <Label x:Name="QLabel" FontSize="20" Text="At Dartmouth College in 1964 John Kemeny and Thomas Kurtz invented ... ?" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+
+        <Button Clicked="Button1_OnClicked" Text="ALGOL" ></Button>
+        <Button Clicked="Button2_OnClicked" Text="Basic" ></Button>
+        <Button Clicked="Button3_OnClicked" Text="FORTRAN" ></Button>
+
+    </StackLayout>
+	
+    
+
+</ContentPage>

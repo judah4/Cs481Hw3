@@ -7,40 +7,51 @@ using Xamarin.Forms;
 
 namespace Cs481Hw3
 {
-    public partial class Page2 : ContentPage, IQuestionPage
+    public partial class Page1 : ContentPage, IQuestionPage
     {
         public QuestionData Question { get; set; }
         public List<QuestionData> Questions { get; set; }
 
-        public Page2(List<QuestionData> questions)
-        {
-            Questions = questions;
-            InitializeComponent();
 
+        public Page1(List<QuestionData> questions)
+        {
+            InitializeComponent();
+            Questions = questions;
             Question = new QuestionData()
             {
-                QuestionText = "Who invented C++ ?",
-                CorrectAnswer = "Bjarne Stroustrup"
+                QuestionText = "At Dartmouth College in 1964 John Kemeny and Thomas Kurtz invented ... ?",
+                CorrectAnswer = "Basic"
             };
             QLabel.Text = Question.QuestionText;
+            
         }
 
         void Answer(Button button)
         {
             Questions.Add(Question.Anwser(button.Text));
+
             Continue();
         }
 
 
-        private void Button_OnClicked(object sender, EventArgs e)
+        private void Button1_OnClicked(object sender, EventArgs e)
+        {
+            Answer((Button) sender);
+        }
+        private void Button2_OnClicked(object sender, EventArgs e)
+        {
+            Answer((Button) sender);
+        }
+        private void Button3_OnClicked(object sender, EventArgs e)
         {
             Answer((Button) sender);
         }
 
         public void Continue()
         {
-            Navigation.PushAsync(new Page3(Questions));
+            Navigation.PushAsync(new Page2(Questions));
 
         }
+
     }
 }

@@ -9,11 +9,17 @@ namespace Cs481Hw3
 {
     public partial class App : Application
     {
+
+        public NavigationPage NavPage { get; set; }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Cs481Hw3.MainPage());
+            NavPage =  new NavigationPage();
+            NavPage.PushAsync(new Cs481Hw3.MainPage(this));
+            MainPage = NavPage;
+
         }
 
         protected override void OnStart()

@@ -7,22 +7,23 @@ using Xamarin.Forms;
 
 namespace Cs481Hw3
 {
-    public partial class Page2 : ContentPage, IQuestionPage
+    public partial class Page5 : ContentPage, IQuestionPage
     {
         public QuestionData Question { get; set; }
         public List<QuestionData> Questions { get; set; }
-
-        public Page2(List<QuestionData> questions)
+        public Page5(List<QuestionData> questions)
         {
             Questions = questions;
-            InitializeComponent();
-
             Question = new QuestionData()
             {
-                QuestionText = "Who invented C++ ?",
-                CorrectAnswer = "Bjarne Stroustrup"
+                QuestionText = "When was the Turing Machine invented?",
+                CorrectAnswer = "1936"
             };
+            InitializeComponent();
+
+
             QLabel.Text = Question.QuestionText;
+
         }
 
         void Answer(Button button)
@@ -31,7 +32,6 @@ namespace Cs481Hw3
             Continue();
         }
 
-
         private void Button_OnClicked(object sender, EventArgs e)
         {
             Answer((Button) sender);
@@ -39,8 +39,7 @@ namespace Cs481Hw3
 
         public void Continue()
         {
-            Navigation.PushAsync(new Page3(Questions));
-
+            Navigation.PushAsync(new Results(Questions));
         }
     }
 }
